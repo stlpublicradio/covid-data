@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
+      - ./scripts/process-covid-vaccinations.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -19,6 +20,7 @@ jobs:
         with:
           http_url: https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data
           downloaded_filename: data/vaccination.json
+          postprocess: ./scripts/process-covid-vaccinations.js
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
