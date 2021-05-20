@@ -11,7 +11,7 @@ var states = ['MO','IL']
 states.forEach(function(d) {
     var source = local.filter(k => k.Location == d)[0]
     
-    var vaccinations = {'data': source.Date, 'first_dose': source.Administered_Dose1_Recip, 'complete': source.Series_Complete_Yes}
+    var vaccinations = {'date': source.Date, 'first_dose': source.Administered_Dose1_Recip, 'complete': source.Series_Complete_Yes}
 
     output[d].vaccinations = vaccinations
 })
