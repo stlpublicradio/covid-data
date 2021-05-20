@@ -18,14 +18,14 @@ jobs:
         uses: githubocto/flat@v2
         with:
           http_url: https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data
-          downloaded_filename: vaccination.json
+          downloaded_filename: data/vaccination.json
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=MO
-          downloaded_filename: cases_mo.json
+          downloaded_filename: data/cases_mo.json
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=IL
-          downloaded_filename: cases_il.json
+          downloaded_filename: data/cases_il.json
