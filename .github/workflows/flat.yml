@@ -1,0 +1,26 @@
+name: data
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch: {}
+  push:
+    paths:
+      - .github/workflows/flat.yml
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v2
+        with:
+          http_url: https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data
+          downloaded_filename: vaccination.json
+      - name: Fetch data
+        uses: githubocto/flat@v2
+        with:
+          http_url: https://data.cdc.gov/resource/9mfq-cb36.json
+          downloaded_filename: case.json
