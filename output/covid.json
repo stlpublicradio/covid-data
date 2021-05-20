@@ -1,1 +1,1 @@
-{"IL":{"vaccinations":{"data":"2021-05-20","first_dose":6551298,"complete":4750034},"cases":{}},"MO":{"vaccinations":{"data":"2021-05-20","first_dose":2491465,"complete":2025458},"cases":{}}}
+{"IL":{"vaccinations":{"date":"2021-05-20","first_dose":6551298,"complete":4750034},"cases":{"date":"2021-05-19","cases":1370342,"new_cases":8676,"deaths":24864,"new_deaths":193}},"MO":{"vaccinations":{"date":"2021-05-20","first_dose":2491465,"complete":2025458},"cases":{"date":"2021-05-19","cases":594838,"new_cases":2326,"deaths":8996,"new_deaths":3}}}
