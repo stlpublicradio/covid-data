@@ -1,12 +1,13 @@
 name: data
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 12 10-20 * * *
   workflow_dispatch: {}
   push:
     paths:
       - .github/workflows/flat.yml
       - ./scripts/process-covid-vaccinations.js
+      - ./scripts/process-covid-cases.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -26,8 +27,10 @@ jobs:
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=MO
           downloaded_filename: data/cases_mo.json
+          postprocess: ./scripts/process-covid-cases.js
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=IL
           downloaded_filename: data/cases_il.json
+          postprocess: ./scripts/process-covid-cases.js
