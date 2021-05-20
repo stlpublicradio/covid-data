@@ -22,5 +22,5 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://data.cdc.gov/resource/9mfq-cb36.json
+          http_url: https://data.cdc.gov/resource/9mfq-cb36.json$where=state in('MO','IL)
           downloaded_filename: case.json
