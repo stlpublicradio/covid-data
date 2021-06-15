@@ -13,23 +13,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup deno
-        uses: denolib/setup-deno@v1
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.10.x
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Fetch data
-        uses: githubocto/flat@v2
+        uses: githubocto/flat@v3
         with:
           http_url: https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data
           downloaded_filename: data/vaccination.json
           postprocess: ./scripts/process-covid-vaccinations.js
       - name: Fetch data
-        uses: githubocto/flat@v2
+        uses: githubocto/flat@v3
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=MO
           downloaded_filename: data/cases_mo.json
           postprocess: ./scripts/process-covid-cases.js
       - name: Fetch data
-        uses: githubocto/flat@v2
+        uses: githubocto/flat@v3
         with:
           http_url: https://data.cdc.gov/resource/9mfq-cb36.json?state=IL
           downloaded_filename: data/cases_il.json
