@@ -1,4 +1,4 @@
-import { readJSON, writeJSON } from 'https://deno.land/x/flat@0.0.10/mod.ts'
+import { readJSON, writeJSON } from 'https://deno.land/x/flat@0.0.14/mod.ts'
 import dayjs from "https://cdn.skypack.dev/dayjs@1.10.4";
 
 const filename = Deno.args[0] // equivalent to writing `const filename = 'btc-price.json'`
